@@ -1,0 +1,57 @@
+﻿<Window x:Class="BiblioWpf.GestionLivres"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BiblioWpf"
+        mc:Ignorable="d"
+        Title="GestionLivres" Height="800" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <!--<ListBox x:Name="lbLivres" ItemsSource="{Binding Path=Livres}" SelectionChanged="lbLivres_SelectionChanged">-->
+                <ListBox x:Name="lbLivres" ItemsSource="{Binding Path=Livres, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="lbLivres_SelectionChanged" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Path=tittre}" />
+                                <TextBlock Text="{Binding Path=nbPage}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Titre" Grid.Column="0" Grid.Row="0" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox Name="tbTitre" Grid.Column="1" Grid.Row="0" Margin="5"/>
+                <Label Content="Pages" Grid.Column="0" Grid.Row="1" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBox Name="tbNbPages" Grid.Column="1" Grid.Row="1" Margin="5"/>
+                <Label Content="Domaines" Grid.Column="0" Grid.Row="2" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <ComboBox x:Name="cbbDomaines" Grid.Column="1" Grid.Row="2" Margin="40" ItemsSource="{Binding Path=Domaines}" DisplayMemberPath="nom"></ComboBox>
+                <Label Content="Auteur" Grid.Column="0" Grid.Row="3" Margin="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <ComboBox x:Name="cbbLecteur" Grid.Column="1" Grid.Row="3" Margin="40" ItemsSource="{Binding Path=Personnes}" DisplayMemberPath="nom"></ComboBox>
+                <Button x:Name="btSupprimer" Content="Supprimer" Grid.Column="0" Grid.ColumnSpan="1" Width="150" Grid.Row="6" Margin="5" Click="btSupprimer_Click" HorizontalAlignment="Left"/>
+                <Button x:Name="btModifier" Content="Modifier" Grid.Column="1" Grid.ColumnSpan="1" Width="150" Grid.Row="6" Margin="5" Click="btModifier_Click" HorizontalAlignment="Left"/>
+                <Button x:Name="btAjouter" Content="Ajouter" Grid.Column="2" Grid.ColumnSpan="1" Width="150" Grid.Row="6" Margin="5" Click="btAjouter_Click" HorizontalAlignment="Right"/>
+            </Grid> 
+        </Grid>
+    </Grid>
+</Window>
