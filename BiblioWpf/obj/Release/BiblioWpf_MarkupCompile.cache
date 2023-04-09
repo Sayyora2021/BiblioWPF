@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Sayyora\Desktop\POEI\FILE ROUGE\bibliowpf\BiblioWpf\obj\Debug\
+C:\Users\Sayyora\Desktop\POEI\FILE ROUGE\bibliowpf\BiblioWpf\obj\Release\
 BiblioWpf
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\Sayyora\Desktop\POEI\FILE ROUGE\bibliowpf\BiblioWpf\App.xaml
 4-2048956774
 
 91618484757
-55-19044184
+55-1959499674
 GestionDomaines.xaml;GestionLivres.xaml;GestionPersonnes.xaml;MainWindow.xaml;
 
-False
+True
 
