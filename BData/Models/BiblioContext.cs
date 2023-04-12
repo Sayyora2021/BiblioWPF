@@ -28,7 +28,7 @@ namespace BData.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=WIN-D8OI762EF46;Initial Catalog=Bibliotheque;Integrated Security=True;TrustServerCertificate=True", options => options.EnableRetryOnFailure());
+                optionsBuilder.UseSqlServer("Data Source=LAPTOP-I90I6VRJ\\SQLEXPRESS;Initial Catalog=bibliotheque;Integrated Security=True", options => options.EnableRetryOnFailure());
             }
         }
 
